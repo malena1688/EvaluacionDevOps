@@ -6,9 +6,12 @@ app.get('/', (req, res) => {
 app.get('/pagina2', (req, res) => { // y aqui devuelve la siguiente pagina
     res.sendFile(__dirname + '/public/pagina2.html');
 });
+const PORT = process.env.PORT || 3000;
+
 if (require.main === module) {
-    app.listen(3000, () => {
-        console.log('Servidor funcionando en http://localhost:3000');
+    app.listen(PORT, '0.0.0.0', () => {
+
+        console.log(`Servidor funcionando en el puerto ${PORT}`);
     });
 }
 
